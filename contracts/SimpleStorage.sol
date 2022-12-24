@@ -8,16 +8,17 @@ contract SimpleStorage {
     uint256 favoriteNumber; // non-negative value upto 255bit
     // maximum value is 2^256-1 (zero needs one space)
 
-    struct People {
+    struct  People {
         uint256 favoriteNumber; // unsigned int vairable favouriteNumber
         string name; // string data type variable name
     }
     // uint256[] public anArray;
     People[] public people; // People-> structure unit, public-> function specifier , people-> array variable
 
-    mapping(string => uint256) public nameToFavoriteNumber; // like a hash table
+    mapping(string => uint256) public  nameToFavoriteNumber; // like a hash table
 
-    function store(uint256 _favoriteNumber) public {
+    // to make a func overrideable, "virtual" keyword is used
+    function store(uint256 _favoriteNumber) public virtual{
         favoriteNumber = _favoriteNumber;
     }
     
